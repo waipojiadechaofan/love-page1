@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: white;
+            text-align: center;
+            padding: 50px;
+            font-family: '微软雅黑', cursive;
+        }
+        .title {
+            font-size: 32px;
+            color: #ff69b4;
+            margin: 30px 0;
+        }
+        .help-img {
+            width: 200px;
+            margin: 20px auto;
+            animation: float 3s ease-in-out infinite;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        #yesBtn {
+            transition: all 0.3s ease;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        #noBtn {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #666;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">王雨欣，你愿意做我的恋人吗？💖</div>
+    <img src="IMG_0489.jpeg" class="help-img" alt="表白图片">
+    <div class="buttons">
+        <button id="yesBtn">可以</button>
+        <button id="noBtn">不要</button>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+
+        yesBtn.addEventListener("click", () => {
+            window.location.href = "success.html"; // 跳转到成功页面
+        });
+
+        noBtn.addEventListener("click", () => {
+            const currentSize = parseFloat(getComputedStyle(yesBtn).fontSize);
+            yesBtn.style.fontSize = `${currentSize + 10}px`;
+        });
+    </script>
+</body>
+</html>
